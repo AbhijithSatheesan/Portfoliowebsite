@@ -1,0 +1,35 @@
+*** HR, TECHNICAL, BOTS
+
+1 - ATS Friendly
+
+    $ Skill sections with keywords in it, eg: react, redux, html, tailwind etc...
+    $ Proper headings - basic words understandable for ATS
+    $
+
+
+
+2 - RECRUITERS
+
+    $ They hardly understand the projects
+    $ skills
+    $ pass year
+    $ Experience
+    $ contact information -- phone number(reachable),email,linkedin
+        Address - X
+        photos - X
+        DOB  - X
+        Gender - X
+
+
+
+3 - TECHNICAL
+
+    $ Projects, recent one, (recently integrated a ml model into django)
+        one recent good project (if can be explained properly), maximum three
+        Challenging project
+        Explain them in three or four points
+    $ Good technical keywords
+    $ Skils- eg: React, Django, ML, also worked with sklearn and tensorflow
+    $ Github link
+
+    1:20
