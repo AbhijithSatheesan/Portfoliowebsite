@@ -1,42 +1,27 @@
-import { useState } from 'react';
-import './App.css';
-import HelloWorld from './Pages/Home';
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import './index.css';
+import Portfolio from './Pages/Portfolio';
+import Navbar from './Components/Navbar';
+import Info from './Pages/Info';
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
-    // Adding min-h-screen and w-full to the wrapper div
-    <div className="min-h-screen w-full bg-black">
-      <HelloWorld />
-    </div>
+    <Router>
+      <div className='min-h-screen w-full flex flex-col items-center bg-black text-white'>
+        
+        <main className='flex-grow flex justify-center items-center'>
+          <Routes>
+            <Route path='/info' element={<Portfolio section="info" />} />
+            <Route path='/work' element={<Portfolio section="work" />} />
+            <Route path='/me' element={<Portfolio section="me" />} />
+            <Route path='/' element={<Portfolio section="info" />} />
+            <Route path="*" element={<div>404 Not Found</div>} />
+          </Routes>
+        </main>
+      </div>
+    </Router>
   );
 }
 
 export default App;
-
-
-
-
-{/* <>
-<div>
-  <a href="https://vite.dev" target="_blank">
-    <img src={viteLogo} className="logo" alt="Vite logo" />
-  </a>
-  <a href="https://react.dev" target="_blank">
-    <img src={reactLogo} className="logo react" alt="React logo" />
-  </a>
-</div>
-<h1>Vite + React</h1>
-<div className="card">
-  <button onClick={() => setCount((count) => count + 1)}>
-    count is {count}
-  </button>
-  <p>
-    Edit <code>src/App.jsx</code> and save to test HMR
-  </p>
-</div>
-<p className="read-the-docs">
-  Click on the Vite and React logos to learn more
-</p>
-</> */}
