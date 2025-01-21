@@ -26,10 +26,6 @@ function Navbar() {
           )}
         </NavLink>
       </nav>
-      <div className="flex gap-2">
-        <Button href="https://www.linkedin.com/in/your-profile">LinkedIn</Button>
-        <Button href="/path/to/resume.pdf">Resume</Button>
-      </div>
     </header>
   );
 }

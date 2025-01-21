@@ -16,20 +16,23 @@ const Portfolio = ({ section }) => {
     {
       title: "Professor Academy",
       description: "Educational platform with student management",
-      tech: "React, Django, Redux",
-      link: "https://github.com/AbhijithSatheesan/Professor_Academy"
+      tech: "React, Django, Redux, Django REST Framework",
+      links: [
+        { type: "Backend", url: "https://github.com/AbhijithSatheesan/Professor_Academy" },
+        { type: "Frontend", url: "https://github.com/AbhijithSatheesan/Professor_Academy_frontend" }
+      ]
     },
     {
       title: "E-commerce Platform",
       description: "Full-featured online shopping platform",
-      tech: "React, Django, Redux",
+      tech: "React, Django, Redux, Django REST Framework",
       link: "https://github.com/AbhijithSatheesan/ECOM---D"
     },
     {
       title: "Vehicle Price Prediction",
       description: "ML model for price predictions",
-      tech: "Python, Scikit-learn",
-      link: "https://github.com/AbhijithSatheesan/bulldozer_price_project"
+      tech: "Python Django, Scikit-learn",
+      link: "https://github.com/AbhijithSatheesan/carprice"
     }
   ];
 
@@ -52,7 +55,7 @@ const Portfolio = ({ section }) => {
       </section>
 
       {/* Skills Section */}
-      <section className="py-10"> {/* Reduced padding */}
+      <section className="pt-10 pb-10"> {/* Reduced padding */}
         <div className="max-w-6xl mx-auto px-4">
           <h2 className="text-4xl font-bold mb-12">Technical Skills</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -95,14 +98,28 @@ const Portfolio = ({ section }) => {
                 <h3 className="text-xl font-bold mb-2">{project.title}</h3>
                 <p className="text-gray-400 mb-4">{project.description}</p>
                 <p className="text-sm text-purple-400 mb-4">{project.tech}</p>
-                <a 
-                  href={project.link}
-                  className="text-blue-400 hover:text-blue-300 transition-colors"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  View Project →
-                </a>
+                {project.links ? (
+                  project.links.map((link, idx) => (
+                    <a 
+                      key={idx}
+                      href={link.url}
+                      className="text-blue-400 hover:text-blue-300 transition-colors block"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {link.type} →
+                    </a>
+                  ))
+                ) : (
+                  <a 
+                    href={project.link}
+                    className="text-blue-400 hover:text-blue-300 transition-colors"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    View Project →
+                  </a>
+                )}
               </div>
             ))}
           </div>
